@@ -250,14 +250,6 @@ add_custom_target(run_dev
     VERBATIM
 )
 
-add_custom_target(run_staging
-    COMMAND ${CMAKE_COMMAND} -E env "AIRCAST_API_URL=https://api.dev.aircast.one" $<TARGET_FILE:${PROJECT_NAME}>
-    DEPENDS ${PROJECT_NAME}
-    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin
-    COMMENT "Running with staging environment"
-    VERBATIM
-)
-
 add_custom_target(run_prod
     COMMAND ${CMAKE_COMMAND} -E env "AIRCAST_API_URL=https://api.aircast.one" $<TARGET_FILE:${PROJECT_NAME}>
     DEPENDS ${PROJECT_NAME}
